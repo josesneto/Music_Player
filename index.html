@@ -9,7 +9,10 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <audio id="player" src="example-music.mp3" controls></audio>
-    <button onclick="pauseMusic()">Pause</button>
+    <div id="playerBox">
+        <audio id="player" src="musics/medicine-remix.mp3" autoplay></audio>
+    </div>
+    <button id="playPauseButton" onclick="togglePlayPause()">PLAY</button>
+    <button id="playPauseButton" onclick="nextMusic()">NEXT</button>
 </body>
 </html>
