@@ -1,44 +1,45 @@
+var isSleeping = true;
 var isPlaying = false;
 var musicArray = [
-    'medicine-remix.mp3',
-    'no-sleep.mp3'
+    'no-sleep.mp3',
+    'sunset-jesus.mp3',
+    'face-to-face.mp3',
 ];
 var i = 0;
-function togglePlayPause() {
-    player = document.getElementById("player");
-    player.onplaying = function () {
-        isPlaying = true;
-        console.log('playing');
-    }
-    player.onpause = function () {
-        isPlaying = false;
-        console.log('not playing');
-    }
-    if (isPlaying) {
-        player.pause();
-        console.log('pause');
-        isPlaying = false;
-        toggleButtonText();
-    }
-    else {
-        player.play();
-        console.log('play');
-        isPlaying = true;
-        toggleButtonText();
-    }
-}
 
-function toggleButtonText() {
-    button = document.getElementById("playPauseButton");
-    if (button.innerHTML == "PLAY") {
-        button.innerHTML = "PAUSE";
+function togglePlayPauseState() {
+    if (isSleeping) {
+        isSleeping = false;
+        nextMusic();
+        togglePlayPauseState();
     }
     else {
-        button.innerHTML = "PLAY";
+        button = document.getElementById("playPauseButton");
+        player = document.getElementById("player");
+        if (button.innerHTML == "PLAY") {
+            button.innerHTML = "PAUSE";
+            isPlaying = true;
+            player.play();
+        }
+        else {
+            button.innerHTML = "PLAY";
+            isPlaying = false;
+            player.pause();
+        }
+        console.log('toggled to isPlaying =' + isPlaying);
     }
+    
 }
 
 function nextMusic() {
+    var autoplay = 'autoplay';
+    if (isSleeping) {
+        isSleeping = false;
+        i++;
+    }
+    if (!isPlaying) {
+        autoplay = ''
+    }
     playerBox = document.getElementById("playerBox");
     music = 'musics/' + musicArray[i];
     if (i < musicArray.length-1) {
@@ -47,7 +48,7 @@ function nextMusic() {
     else {
         i = 0;
     }
-    newPlayerBox = "<audio id='player' src='" + music + "' autoplay></audio>";
+    newPlayerBoxContent = "<audio id='player' src='" + music + "' " + autoplay + "></audio>";
     console.log(music);
-    playerBox.innerHTML = newPlayerBox;
+    playerBox.innerHTML = newPlayerBoxContent;
 }
