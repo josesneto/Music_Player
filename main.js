@@ -26,29 +26,49 @@ function togglePlayPauseState() {
             isPlaying = false;
             player.pause();
         }
-        console.log('toggled to isPlaying =' + isPlaying);
+        console.log('toggled to isPlaying = ' + isPlaying);
     }
     
 }
 
 function nextMusic() {
-    var autoplay = 'autoplay';
+    
+    console.log('index' + i)
     if (isSleeping) {
         isSleeping = false;
         i++;
     }
-    if (!isPlaying) {
-        autoplay = ''
-    }
-    playerBox = document.getElementById("playerBox");
-    music = 'musics/' + musicArray[i];
+    music = musicArray[i];
     if (i < musicArray.length-1) {
         i++;
     }
     else {
         i = 0;
     }
-    newPlayerBoxContent = "<audio id='player' src='" + music + "' " + autoplay + "></audio>";
-    console.log(music);
+    console.log('choosen ' + music + i);
+    chooseMusic(music);
+}
+
+function chooseMusic(musicname) {
+    var autoplay = 'autoplay';
+    if (!isPlaying) {
+        autoplay = '';
+    }
+    playerBox = document.getElementById("playerBox");
+    newPlayerBoxContent = "<audio id='player' src='musics/" + musicname + "' " + autoplay + "></audio>";
+    console.log(newPlayerBoxContent);
     playerBox.innerHTML = newPlayerBoxContent;
 }
+
+function listMusics() {
+    var element = document.getElementById("musicsList");
+    content = " ";
+    for (let i = 0; i < musicArray.length; i++) {
+        music = musicArray[i];
+        content = content + '<li>' + music + '</li>';
+        console.log(music);
+    }
+    element.innerHTML = '<ul>' + content + '</ul>';
+}
+
+listMusics();
