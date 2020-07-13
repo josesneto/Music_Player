@@ -5,16 +5,45 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>josesneto's Music Player</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     
 </head>
 <body>
-    <div id="playerBox">
+    <!-- <div id="player-box">
+        <audio id="player" src="musics/no-sleep.mp3" autoplay></audio>
+    </div> -->
+    <!-- <button id="play-pause-button" onclick="togglePlayPauseState()">PLAY</button> -->
+    <!-- <i class="fa fa-play-circle" aria-hidden="true"></i> -->
+    <!--<button onclick="nextMusic()">NEXT</button>-->
+    
+    
+    <div id="player-box">
         <audio id="player" src="musics/no-sleep.mp3" autoplay></audio>
     </div>
-    <button id="playPauseButton" onclick="togglePlayPauseState()">PLAY</button>
-    <button onclick="nextMusic()">NEXT</button>
+    <table align="center" width="35%">
+        <tr>
+            <td colspan="3">
+                <input type="range" class='slider'>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div onclick="previousMusic()"><i class="fa fa-5x fa-step-backward player-button" aria-hidden="true"></i></div>
+            </td>
+            <td>
+                <div id="play-pause-button" onclick="togglePlayPauseState()">
+                    <i id='play-pause-icon' class="fa fa-5x fa-play-circle player-button" aria-hidden="true"></i>
+                </div>
+            </td>
+            <td>
+                <div onclick="nextMusic()"><i class="fa fa-5x fa-step-forward player-button" aria-hidden="true"></i></div>
+            </td>
+        </tr>
+    </table>
     <div id='musicsList'></div>
+    
+
     <script src='main.js'></script>
 </body>
 </html>

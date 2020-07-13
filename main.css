@@ -1,0 +1,23 @@
+
+.player-button {
+    color: rgb(62, 61, 80);
+    transition: 0.3s;
+}
+.player-button:hover {
+    color: rgb(27, 104, 177);
+    transition: 0.3s;
+}
+.player-button:active {
+    color: rgb(25, 0, 255);
+    transition: 0.3s;
+}
+
+tr {
+    text-align: center;
+    background-color: rgb(20, 20, 24);
+}
+
+/* .slider {
+    -webkit-appearance: none;
+    border-radius: 15px;
+} */
