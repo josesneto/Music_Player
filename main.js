@@ -7,6 +7,43 @@ var musicArray = [
 ];
 var i = 0;
 
+setInterval(showDuration, 500);
+
+function changeCurrentTime() {
+    player = document.getElementById("player");
+    musicTime = document.getElementById("music-time");
+    player.currentTime = musicTime.value;
+    console.log("music time changed");
+}
+
+function showDuration() {
+    player = document.getElementById("player");
+    musicTime = document.getElementById("music-time");
+    currentTimeDisplay = document.getElementById("current-time");
+    durationDisplay = document.getElementById("duration");
+    currentTimeMinSecs = "0:00";
+    durationMinSecs = "0:00";
+    duration = Math.floor(player.duration);
+    minutes = duration / 60;
+    seconds = (duration % 60).toFixed(0);
+    if (seconds == "0") {
+        seconds = "00";
+    }
+    currentTimeMins = (player.currentTime / 60).toFixed(0);
+    currentTimeSecs = (player.currentTime % 60).toFixed(0);
+    if (currentTimeSecs < 10) {
+        currentTimeSecs = "0" + currentTimeSecs;
+    }
+    currentTimeMinSecs = currentTimeMins + ":" + currentTimeSecs;
+    durationMinSecs = Math.ceil(minutes) + ":" + seconds;
+    // console.log(currentTime, durationMinSecs);
+
+    musicTime.min = 0;
+    musicTime.max = duration;
+    musicTime.value = player.currentTime;
+    currentTimeDisplay.innerHTML = currentTimeMinSecs;
+    durationDisplay.innerHTML = durationMinSecs;
+}
 
 function buttonToggle() {
     element = document.getElementById('play-pause-icon');

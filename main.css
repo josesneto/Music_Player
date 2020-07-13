@@ -14,10 +14,11 @@
 
 tr {
     text-align: center;
-    background-color: rgb(20, 20, 24);
+    /* background-color: rgb(20, 20, 24); */
 }
 
-/* .slider {
-    -webkit-appearance: none;
+.slider {
+    /* -webkit-appearance: none; */
+    width: 100%;
     border-radius: 15px;
-} */
+}
