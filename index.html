@@ -16,15 +16,23 @@
     <!-- <button id="play-pause-button" onclick="togglePlayPauseState()">PLAY</button> -->
     <!-- <i class="fa fa-play-circle" aria-hidden="true"></i> -->
     <!--<button onclick="nextMusic()">NEXT</button>-->
-    
-    
+    <div align="center">
+        <div id="album-image">
+        </div>
+        <div id="music-name">
+        </div>
+        <div id="artist-name">
+        </div>
+        <div id="album-name">
+        </div>
+    </div>
     <div id="player-box">
         <audio id="player" src="musics/no-sleep.mp3" autoplay></audio>
     </div>
-    <table border=1 align="center" width="75%">
+    <table align="center" width="20%" class="dark-rounded">
         <tr>
             <td colspan="3">
-                <table width=100% border=1 align="center">
+                <table width=100% align="center">
                     <tr>
                         <td><div id="current-time">0:00</div></td>
                         <td><input id="music-time" type="range" class='slider' min=0 max=0 onchange="changeCurrentTime()"></td>
@@ -49,7 +57,7 @@
     </table>
     <div id='musicsList'></div>
     
-
+    <script type="text/javascript" src="musics-data.json"></script>
     <script src='main.js'></script>
 </body>
 </html>

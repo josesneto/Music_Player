@@ -1,0 +1,5 @@
+musicsDataJSON = {"musics":[
+    {"file": "face-to-face.mp3", "name": "Face To Face", "artist": "Daft Punk", "album-name": "Discovery", "album-image": "images/discovery.jpg"},
+    {"file": "no-sleep.mp3", "name": "No Sleep", "artist": "Caamp", "album-name": "Caamp Single", "album-image": "images/no-sleep.jpg"},
+    {"file": "sunset-jesus.mp3", "name": "Sunset Jesus", "artist": "AVICCI", "album-name": "Stories", "album-image": "images/stories.jpg"},
+]}

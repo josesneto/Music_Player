@@ -1,14 +1,3 @@
-var isSleeping = true;
-var isPlaying = false;
-var musicArray = [
-    'no-sleep.mp3',
-    'sunset-jesus.mp3',
-    'face-to-face.mp3',
-];
-var i = 0;
-
-setInterval(showDuration, 500);
-
 function changeCurrentTime() {
     player = document.getElementById("player");
     musicTime = document.getElementById("music-time");
@@ -16,7 +5,7 @@ function changeCurrentTime() {
     console.log("music time changed");
 }
 
-function showDuration() {
+function handleMusicTime() {
     player = document.getElementById("player");
     musicTime = document.getElementById("music-time");
     currentTimeDisplay = document.getElementById("current-time");
@@ -29,13 +18,13 @@ function showDuration() {
     if (seconds == "0") {
         seconds = "00";
     }
-    currentTimeMins = (player.currentTime / 60).toFixed(0);
-    currentTimeSecs = (player.currentTime % 60).toFixed(0);
+    currentTimeMins = Math.floor((player.currentTime / 60)).toFixed(0);
+    currentTimeSecs = Math.floor((player.currentTime % 60)).toFixed(0);
     if (currentTimeSecs < 10) {
         currentTimeSecs = "0" + currentTimeSecs;
     }
     currentTimeMinSecs = currentTimeMins + ":" + currentTimeSecs;
-    durationMinSecs = Math.ceil(minutes) + ":" + seconds;
+    durationMinSecs = Math.floor(minutes) + ":" + seconds;
     // console.log(currentTime, durationMinSecs);
 
     musicTime.min = 0;
@@ -43,6 +32,9 @@ function showDuration() {
     musicTime.value = player.currentTime;
     currentTimeDisplay.innerHTML = currentTimeMinSecs;
     durationDisplay.innerHTML = durationMinSecs;
+    if (currentTimeMinSecs == durationMinSecs) {
+        nextMusic();
+    }
 }
 
 function buttonToggle() {
@@ -74,11 +66,9 @@ function togglePlayPauseState() {
         }
         console.log('toggled to isPlaying = ' + isPlaying);
     }
-    
 }
 
 function previousMusic() {
-    
     console.log('index' + i)
     if (isSleeping) {
         isSleeping = false;
@@ -91,12 +81,10 @@ function previousMusic() {
         i = musicArray.length-1;
     }
     music = musicArray[i];
-    console.log('choosen ' + music + i);
     chooseMusic(music);
 }
 
-function nextMusic() {
-    
+function nextMusic() {  
     console.log('index' + i)
     if (isSleeping) {
         isSleeping = false;
@@ -109,17 +97,18 @@ function nextMusic() {
         i = 0;
     }
     music = musicArray[i];
-    console.log('choosen ' + music + i);
     chooseMusic(music);
 }
 
-function chooseMusic(musicname) {
+function chooseMusic(music) {
+    musicPath = music["file"];
     var autoplay = 'autoplay';
     if (!isPlaying) {
         autoplay = '';
     }
+    updateMusicInfo(music);
     playerBox = document.getElementById("player-box");
-    newPlayerBoxContent = "<audio id='player' src='musics/" + musicname + "' " + autoplay + "></audio>";
+    newPlayerBoxContent = "<audio id='player' src='musics/" + musicPath + "' " + autoplay + "></audio>";
     console.log(newPlayerBoxContent);
     playerBox.innerHTML = newPlayerBoxContent;
 }
@@ -128,12 +117,43 @@ function listMusics() {
     var element = document.getElementById("musicsList");
     content = " ";
     for (let i = 0; i < musicArray.length; i++) {
-        music = musicArray[i];
+        music = musicArray[i]["file"];
         content = content + '<li>' + music + '</li>';
         console.log(music);
     }
     element.innerHTML = '<ul>' + content + '</ul>';
 }
 
+function updateMusicInfo(musicObj) {
+    albumImgElement = document.getElementById("album-image");
+    musicNameElement = document.getElementById("music-name");
+    artistNameElement = document.getElementById("artist-name");
+    albumNameElement = document.getElementById("album-name");
+    albumImgPath = musicObj["album-image"];
+    musicName = musicObj["name"];
+    artistName = musicObj["artist"];
+    albumName = musicObj["album-name"];
+    albumImgElement.innerHTML = "<img src='" + albumImgPath + "' />";
+    musicNameElement.innerHTML = "<h1>" + musicName + "</h1>";
+    artistNameElement.innerHTML = "<h2>" + artistName + "</h2>";
+    albumNameElement.innerHTML = "<h3>" + albumName + "</h3>";
+}
 
+var isSleeping = true;
+var isPlaying = false;
+musicArray = musicsDataJSON['musics'];
+
+// var musicArray = [
+//     'no-sleep.mp3',
+//     'sunset-jesus.mp3',
+//     'face-to-face.mp3',
+// ];
+var i = 0;
+
+setInterval(handleMusicTime, 500);
+
+chooseMusic(musicArray[0]);
 listMusics();
+
+// console.log(musics[0]['album-image']);
+// updateMusicInfo(musics[0]);
