@@ -5,58 +5,63 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>josesneto's Music Player</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" type='text/css' media='screen' href="font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='bootstrap-4.5.0\css\bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    
 </head>
 <body>
-    <!-- <div id="player-box">
-        <audio id="player" src="musics/no-sleep.mp3" autoplay></audio>
-    </div> -->
-    <!-- <button id="play-pause-button" onclick="togglePlayPauseState()">PLAY</button> -->
-    <!-- <i class="fa fa-play-circle" aria-hidden="true"></i> -->
-    <!--<button onclick="nextMusic()">NEXT</button>-->
-    <div align="center">
-        <div id="album-image">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-md-center" id="album-image"></div>
+            <div class="col-md-4"></div>
         </div>
-        <div id="music-name">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-md-center" id="music-name"></div>
+            <div class="col-md-4"></div>
         </div>
-        <div id="artist-name">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-md-center" id="artist-name"></div>
+            <div class="col-md-4"></div>
         </div>
-        <div id="album-name">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-md-center" id="album-name"></div>
+            <div class="col-md-4"></div>
         </div>
     </div>
-    <div id="player-box">
-        <audio id="player" src="musics/no-sleep.mp3" autoplay></audio>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" id="player-box">
+            <audio id="player" src="musics/no-sleep.mp3" autoplay></audio>
+        </div>
+        <div class="col-md-4"></div>
     </div>
-    <table align="center" width="20%" class="dark-rounded">
-        <tr>
-            <td colspan="3">
-                <table width=100% align="center">
-                    <tr>
-                        <td><div id="current-time">0:00</div></td>
-                        <td><input id="music-time" type="range" class='slider' min=0 max=0 onchange="changeCurrentTime()"></td>
-                        <td><div id="duration">0:00</div></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div onclick="previousMusic()"><i class="fa fa-3x fa-step-backward player-button" aria-hidden="true"></i></div>
-            </td>
-            <td>
-                <div id="play-pause-button" onclick="togglePlayPauseState()">
-                    <i id='play-pause-icon' class="fa fa-5x fa-play-circle player-button" aria-hidden="true"></i>
-                </div>
-            </td>
-            <td>
-                <div onclick="nextMusic()"><i class="fa fa-3x fa-step-forward player-button" aria-hidden="true"></i></div>
-            </td>
-        </tr>
-    </table>
-    <div id='musicsList'></div>
-    
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-1 text-md-center"><b><div id="current-time">0:00</div></b></div>
+        <div class="col-md-2 text-md-center"><input id="music-time" type="range" class='slider' min=0 max=0 onchange="setNewCurrentTime()"></div>
+        <div class="col-md-1 text-md-center"><b><div id="duration">0:00</div></b></div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-1 text-md-center">
+            <div onclick="previousMusic()"><i class="fa fa-5x fa-step-backward player-button" aria-hidden="true"></i></div>
+        </div>
+        <div class="col-md-2 text-md-center">
+            <div onclick="togglePlayPauseState()">
+                <i id='play-pause-icon' class="fa fa-5x fa-play-circle player-button" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="col-md-1 text-md-center">
+            <div onclick="nextMusic()"><i class="fa fa-5x fa-step-forward player-button" aria-hidden="true"></i></div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <!-- <div id='musicsList'></div> -->
     <script type="text/javascript" src="musics-data.json"></script>
     <script src='main.js'></script>
 </body>
