@@ -25,9 +25,9 @@ function updateMusicInfo(musicObj) {
     let artistName = musicObj["artist"];
     let albumName = musicObj["album-name"];
     albumImgElement.innerHTML = "<img src='" + albumImgPath + "'/>";
-    musicNameElement.innerHTML = "<h1>" + musicName + "</h1>";
-    artistNameElement.innerHTML = "<h2>" + artistName + "</h2>";
-    albumNameElement.innerHTML = "<h3>" + albumName + "</h3>";
+    musicNameElement.innerHTML = "<h2>" + musicName + "</h2>";
+    artistNameElement.innerHTML = "<h3>" + artistName + "</h3>";
+    albumNameElement.innerHTML = "<h4>" + albumName + "</h4>";
 }
 
 function setNewCurrentTime() {
@@ -62,7 +62,7 @@ function handleMusicTime() {
     musicTimePointerElement.value = playerElement.currentTime;
     currentTimeElement.innerHTML = currentTimeMinSecs;
     durationElement.innerHTML = durationMinSecs;
-    if (currentTimeMinSecs == durationMinSecs) {
+    if (currentTimeMinSecs == durationMinSecs && isPlaying) {
         nextMusic();
     }
 }
