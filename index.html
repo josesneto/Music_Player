@@ -10,10 +10,10 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col"></div>
-            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 text-center" id="album-image"></div>
+            <div class="col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-5 text-center" id="album-image"></div>
             <div class="col"></div>
         </div>
         <div class="row">
@@ -37,24 +37,44 @@
             </div>
         </div>
         <div class="row">
-            <div class="col"></div>
-            <b><div class="col-2 col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right" id="current-time">0:00</div></b>
-            <div class="col-8 col-sm-6 col-md-6 col-lg-8 col-xl-6 text-center"><input id="music-time" type="range" class='slider' min=0 max=0 onchange="setNewCurrentTime()"></div>
-            <b><div class="col-2 col-sm-1 col-md-2 col-lg-1 col-xl-1  text-left" id="duration">0:00</div></b>
-            <div class="col"></div>
+            <div class="col-sm-0 col-md-1 col-lg-2 col-xl-2"></div>
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xl-8">
+                <table><tr>
+                    <td>
+                        <b><div class="text-right" id="current-time">0:00</div></b>
+                    </td>
+                    <td>
+                        <div class="text-center"><input id="music-time" type="range" class='slider' min=0 max=0 onchange="setNewCurrentTime()"></div>
+                    </td>
+                    <td>
+                        <b><div class="text-left" id="duration">0:00</div></b>
+                    </td>
+                </tr></table>
+            </div>
+            <div class="col-sm-0 col-md-1 col-lg-2 col-xl-2"></div>
         </div>
         <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-center">
-                <div onclick="previousMusic()"><i class="fa fa-5x fa-step-backward player-button" aria-hidden="true"></i></div>
+            <div class="col-sm-0 col-md-2 col-lg-3 col-xl-3"></div>
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-6 text-center">
+            <table><tr>
+                <td>
+                    <div class="icon-div" onclick="previousMusic()">
+                        <i class="fa fa-5x fa-step-backward player-button" aria-hidden="true"></i>
+                    </div>
+                </td>
+                <td>
+                    <div class="icon-div" onclick="togglePlayPauseState()">
+                        <i id='play-pause-icon' class="fa fa-5x fa-play-circle player-button" aria-hidden="true"></i>
+                    </div>
+                </td>
+                <td>
+                    <div class="icon-div" onclick="nextMusic()">
+                        <i class="fa fa-5x fa-step-forward player-button" aria-hidden="true"></i>
+                    </div>
+                </td>
+            </tr></table>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-center">
-                <div onclick="togglePlayPauseState()">
-                    <i id='play-pause-icon' class="fa fa-5x fa-play-circle player-button" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-center">
-                <div onclick="nextMusic()"><i class="fa fa-5x fa-step-forward player-button" aria-hidden="true"></i></div>
-            </div>
+            <div class="col-sm-0 col-md-2 col-lg-3 col-xl-3"></div>
         </div>
     </div>  
     <!-- <div id='musicsList'></div> -->

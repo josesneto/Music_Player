@@ -5,8 +5,12 @@ body {
 }
 
 img {
-    width: 75%;
+    width: 70%;
     border-radius: 30px;
+}
+
+table {
+    width: 100%;
 }
 
 .player-button {
@@ -25,8 +29,8 @@ img {
 }
 
 .slider {
+    width: 80%;
     /* -webkit-appearance: none; */
-    width: 50%;
     /* border-radius: 15px; */
 }
 
