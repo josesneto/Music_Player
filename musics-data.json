@@ -1,5 +1,13 @@
 musicsDataJSON = {"musics":[
-    {"file": "face-to-face.mp3", "name": "Face To Face", "artist": "Daft Punk", "album-name": "Discovery", "album-image": "images/discovery.jpg"},
-    {"file": "no-sleep.mp3", "name": "No Sleep", "artist": "Caamp", "album-name": "Caamp Single", "album-image": "images/no-sleep.jpg"},
-    {"file": "sunset-jesus.mp3", "name": "Sunset Jesus", "artist": "AVICCI", "album-name": "Stories", "album-image": "images/stories.jpg"},
+    {"file": "lord-of-the-dawn.mp3", "name": "Lord Of The Dawn", "artist": "Jesse Gallagher", "album-name": "No Album Name", "album-image": "discovery.jpg"},
+    {"file": "tin-spirit.mp3", "name": "Tin Spirit", "artist": "Freedom Trail Studio", "album-name": "(Here It'd go the album name)", "album-image": "no-sleep.jpg"},
+    {"file": "joker.mp3", "name": "Joker", "artist": "Causmic", "album-name": "Unknown Album", "album-image": "stories.jpg"},
+    {"file": "after-you.mp3", "name": "After You", "artist": "Dan Lebowitz", "album-name": "Not Known Album", "album-image": "kairos.jpg"},
 ]}
+
+// musicsDataJSON = {"musics":[
+//     {"file": "face-to-face.mp3", "name": "Face To Face", "artist": "Daft Punk", "album-name": "Discovery", "album-image": "discovery.jpg"},
+//     {"file": "no-sleep.mp3", "name": "No Sleep", "artist": "Caamp", "album-name": "Caamp Single", "album-image": "no-sleep.jpg"},
+//     {"file": "sunset-jesus.mp3", "name": "Sunset Jesus", "artist": "AVICCI", "album-name": "Stories", "album-image": "stories.jpg"},
+//     {"file": "james.mp3", "name": "James", "artist": "Sam Brookes", "album-name": "Kairos", "album-image": "kairos.jpg"},
+// ]}

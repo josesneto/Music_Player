@@ -18,22 +18,22 @@ function chooseMusic(musicObj) {
 
 function changeBackground(albumImage) {
     backgroundElement = document.getElementById("background");
-    backgroundElement.style = "background-image: url('"+ albumImage +"');";
+    backgroundElement.style = "background-image: url('images/"+ albumImage +"');";
 }
 
 function updateMusicInfo(musicObj) {
     let albumImgElement = document.getElementById("album-image");
     let musicNameElement = document.getElementById("music-name");
     let artistNameElement = document.getElementById("artist-name");
-    let albumNameElement = document.getElementById("album-name");
+    // let albumNameElement = document.getElementById("album-name");
     let albumImgPath = musicObj["album-image"];
     let musicName = musicObj["name"];
     let artistName = musicObj["artist"];
-    let albumName = musicObj["album-name"];
-    albumImgElement.innerHTML = "<img src='" + albumImgPath + "'/>";
-    musicNameElement.innerHTML = "<h2>" + musicName + "</h2>";
+    // let albumName = musicObj["album-name"];
+    albumImgElement.innerHTML = "<img src='images/" + albumImgPath + "'/>";
+    musicNameElement.innerHTML = "<h1>" + musicName + "</h1>";
     artistNameElement.innerHTML = "<h3>" + artistName + "</h3>";
-    albumNameElement.innerHTML = "<h4>" + albumName + "</h4>";
+    // albumNameElement.innerHTML = "<h4>" + albumName + "</h4>";
 }
 
 function setNewCurrentTime() {
