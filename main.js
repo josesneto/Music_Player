@@ -6,6 +6,7 @@ function chooseMusic(musicObj) {
     let musicPath = musicObj["file"];
     let autoplay = 'autoplay';
     let playerBox = document.getElementById("player-box");
+    changeBackground(musicObj["album-image"]);
     if (!isPlaying) {
         autoplay = '';
     }
@@ -13,6 +14,11 @@ function chooseMusic(musicObj) {
     let newPlayerBoxContent = "<audio id='player' src='musics/" + musicPath + "' " + autoplay + "></audio>";
     console.log(newPlayerBoxContent);                   // REM
     playerBox.innerHTML = newPlayerBoxContent;
+}
+
+function changeBackground(albumImage) {
+    backgroundElement = document.getElementById("background");
+    backgroundElement.style = "background-image: url('"+ albumImage +"');";
 }
 
 function updateMusicInfo(musicObj) {
