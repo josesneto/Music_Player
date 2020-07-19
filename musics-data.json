@@ -1,8 +1,8 @@
 musicsDataJSON = {"musics":[
-    {"file": "lord-of-the-dawn.mp3", "name": "Lord Of The Dawn", "artist": "Jesse Gallagher", "album-name": "No Album Name", "album-image": "discovery.jpg"},
-    {"file": "tin-spirit.mp3", "name": "Tin Spirit", "artist": "Freedom Trail Studio", "album-name": "(Here It'd go the album name)", "album-image": "no-sleep.jpg"},
-    {"file": "joker.mp3", "name": "Joker", "artist": "Causmic", "album-name": "Unknown Album", "album-image": "stories.jpg"},
-    {"file": "after-you.mp3", "name": "After You", "artist": "Dan Lebowitz", "album-name": "Not Known Album", "album-image": "kairos.jpg"},
+    {"file": "lord-of-the-dawn.mp3", "name": "Lord Of The Dawn", "artist": "Jesse Gallagher", "album-name": "The Inner Sound", "album-image": "the-inner-sound.jpg"},
+    {"file": "tin-spirit.mp3", "name": "Tin Spirit", "artist": "Freedom Trail Studio", "album-name": "(Here It'd go the album name)", "album-image": "tin-spirit.png"},
+    {"file": "joker.mp3", "name": "Joker", "artist": "Causmic", "album-name": "Unknown Album", "album-image": "joker.png"},
+    {"file": "after-you.mp3", "name": "After You", "artist": "Dan Lebowitz", "album-name": "Not Known Album", "album-image": "after-you.png"},
 ]}
 
 // musicsDataJSON = {"musics":[
